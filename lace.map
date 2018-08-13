@@ -1,0 +1,364 @@
+AREA .  .ABS.
+	RADIX HEX
+	BASE 0000
+	SIZE 0000
+	ATTRIB ABS OVR
+	GLOBALS
+		l__HEAP	0000
+		l__BSEG	0000
+		l_.  .ABS.	0000
+		l__GSFINAL	0000
+		l__ISEG	0000
+		s_.  .ABS.	0000
+		s__HEADER	0000
+		l__XSEG	0000
+		.init	0000
+		l__OVERLAY	0000
+		l__LIT	0000
+		l__GSINITTAIL	0001
+		l__BSS	005C
+		l__HOME	01D3
+		l__HEADER	01E1
+		s__CODE	0200
+		l__BASE	0211
+		l__GSINIT	09DB
+		l__DATA	1151
+		l__CODE	2DEB
+		s__HOME	2FEB
+		s__BASE	31BE
+		s__LIT	33CF
+		s__GSINIT	33CF
+		s__GSINITTAIL	3DAA
+		s__GSFINAL	3DAB
+		.OAM	C000
+		s__DATA	C0A0
+		s__BSS	D1F1
+		s__HEAP	D24D
+		s__BSEG	D24D
+		s__ISEG	D24D
+		s__XSEG	D24D
+		s__OVERLAY	D24D
+		.STACK	E000
+		.refresh_OAM	FF80
+AREA _CODE
+	RADIX HEX
+	BASE 0200
+	SIZE 2DEB
+	ATTRIB REL CON
+	GLOBALS
+		_fade	0200
+		_move_ship	0271
+		_move_enemies	0DD2
+		_main	1C33
+		__rrulong_rrx_s	25B8
+		__rrslong_rrx_s	25D5
+		__rlslong_rrx_s	25F2
+		__rlulong_rrx_s	25F2
+		_set_bkg_palette_entry	260F
+		_set_sprite_palette_entry	2637
+		_cpu_slow	265F
+		_cpu_fast	267A
+		_cgb_compatibility	2681
+		__mulslong_rrf_s	26CA
+		__mulslong_rrx_s	26CA
+		__mululong_rrf_s	26CD
+		__mululong_rrx_s	26CD
+		__modslong_rrf_s	26D0
+		__modslong_rrx_s	26D0
+		__modulong_rrf_s	26D3
+		__modulong_rrx_s	26D3
+		__divslong_rrf_s	26D6
+		__divslong_rrx_s	26D6
+		__divulong_rrf_s	26D9
+		__divulong_rrx_s	26D9
+		__mulsint_rrf_s	26DC
+		__divsint_rrf_s	26E2
+		__muluint_rrf_s	26E8
+		__divuint_rrf_s	26EE
+		__mulschar_rrf_s	26F4
+		__divschar_rrf_s	26FA
+		__muluchar_rrf_s	2700
+		__divuchar_rrf_s	2706
+		__modschar_rrf_s	270C
+		__moduchar_rrf_s	2712
+		__modsint_rrf_s	2718
+		__moduint_rrf_s	271E
+		__rrulong_rrf_s	2724
+		__rrslong_rrf_s	272A
+		__rlulong_rrf_s	2730
+		__rlslong_rrf_s	2736
+		__mululong	273C
+		__mulslong	2A88
+		__divschar_rrx_s	2ABE
+		__divschar_rrx_hds	2AC5
+		__modschar_rrx_s	2ACC
+		__modschar_rrx_hds	2AD3
+		__divsint_rrx_s	2AD8
+		__divsint_rrx_hds	2AE4
+		__modsint_rrx_s	2AEC
+		__modsint_rrx_hds	2AF8
+		__divuchar_rrx_s	2AFE
+		__divuchar_rrx_hds	2B05
+		__moduchar_rrx_s	2B0C
+		__moduchar_rrx_hds	2B13
+		__divuint_rrx_s	2B18
+		__divuint_rrx_hds	2B24
+		__moduint_rrx_s	2B2C
+		__moduint_rrx_hds	2B38
+		.mod8	2B3E
+		.div8	2B3E
+		.mod16	2B46
+		.div16	2B46
+		.modu8	2B80
+		.divu8	2B80
+		.modu16	2B83
+		.divu16	2B83
+		__mulschar_rrx_s	2BC0
+		__mulschar_rrx_hds	2BC7
+		__muluchar_rrx_s	2BD3
+		__mulsint_rrx_s	2BE0
+		__muluint_rrx_s	2BE0
+		__mulsint_rrx_hds	2BEC
+		__muluint_rrx_hds	2BEC
+		__muluchar_rrx_hds	2BEC
+		__modslong	2C08
+		__modulong	2D1C
+		__divslong	2E0C
+		__divulong	2F20
+AREA _HEADER
+	RADIX HEX
+	BASE 0000
+	SIZE 01E1
+	ATTRIB ABS OVR
+	GLOBALS
+		_exit	01D2
+AREA _HOME
+	RADIX HEX
+	BASE 2FEB
+	SIZE 01D3
+	ATTRIB REL CON
+	GLOBALS
+		.set_mode	2FEB
+		.remove_VBL	2FFB
+		.remove_LCD	3001
+		.remove_TIM	3007
+		.remove_SIO	300D
+		.remove_JOY	3013
+		.add_VBL	3019
+		.add_LCD	301F
+		.add_TIM	3025
+		.add_SIO	302B
+		.add_JOY	3031
+		.remove_int	3037
+		.add_int	3057
+		.wait_vbl_done	3073
+		_wait_vbl_done	3073
+		_display_off	308A
+		.display_off	308A
+		.serial_IO	30AB
+		_mode	30DA
+		_get_mode	30E3
+		_enable_interrupts	30E8
+		_disable_interrupts	30EA
+		_reset	30EC
+		.reset	30EC
+		_set_interrupts	30F2
+		_remove_VBL	30FD
+		_remove_LCD	3108
+		_remove_TIM	3113
+		_remove_SIO	311E
+		_remove_JOY	3129
+		_add_VBL	3134
+		_add_LCD	313F
+		_add_TIM	314A
+		_add_SIO	3155
+		_add_JOY	3160
+		_clock	316B
+		__printTStates	3174
+		banked_call	3175
+		banked_ret	318E
+		__initrleblock	3197
+AREA _BASE
+	RADIX HEX
+	BASE 31BE
+	SIZE 0211
+	ATTRIB REL CON
+	GLOBALS
+		.set_sprite_prop	31BE
+		_set_sprite_prop	31CB
+		.mv_sprite	31D6
+		_move_sprite	31E5
+		_set_bkg_palette	31F2
+		_set_sprite_palette	321D
+		_set_win_data	3248
+		_set_bkg_data	3248
+		_set_sprite_data	3295
+		.padup	32C4
+		_waitpadup	32C4
+		.jpad	32D4
+		.wait_pad	3301
+		_joypad	3308
+		_waitpad	330D
+		.set_sprite_tile	3317
+		_set_sprite_tile	3324
+		.copy_vram	332F
+		_get_data	333E
+		_set_data	333E
+		_set_bkg_tiles	3351
+		.set_xy_wtt	3365
+		.set_xy_btt	3376
+		.set_xy_tt	3385
+		_set_tiles	33B6
+AREA _LIT
+	RADIX HEX
+	BASE 33CF
+	SIZE 0000
+	ATTRIB REL CON
+AREA _GSINIT
+	RADIX HEX
+	BASE 33CF
+	SIZE 09DB
+	ATTRIB REL CON
+	GLOBALS
+		gsinit	33CF
+AREA _GSINITTAIL
+	RADIX HEX
+	BASE 3DAA
+	SIZE 0001
+	ATTRIB REL CON
+AREA _GSFINAL
+	RADIX HEX
+	BASE 3DAB
+	SIZE 0000
+	ATTRIB REL CON
+AREA _DATA
+	RADIX HEX
+	BASE C0A0
+	SIZE 1151
+	ATTRIB REL CON
+	GLOBALS
+		_splashTiles	C0A0
+		_splashPalette	C620
+		_splashMap	C660
+		_splashAttr	C7C8
+		_stdAttr	C930
+		_std_data	C950
+		_std_data2	C990
+		_frame_data	C9D0
+		_bkg_tiles	CDF0
+		_frame_tiles	CDF1
+		_palettes1	CE37
+		_palettes2	CE77
+		_time	CEB7
+		_color	CEB8
+		_sframe	CEB9
+		_ship	CEBA
+		_enemies	CEC9
+		_myshots	D08B
+		_theirshots	D0C7
+		_explosions	D103
+		_scnt	D15D
+		_startframes	D15F
+		_endframes	D164
+		_rockx	D169
+		_rocky	D1AD
+AREA _BSS
+	RADIX HEX
+	BASE D1F1
+	SIZE 005C
+	ATTRIB REL CON
+	GLOBALS
+		__cpu	D1F1
+		.mode	D1F2
+		__io_out	D1F3
+		__io_in	D1F4
+		__io_status	D1F5
+		.vbl_done	D1F6
+		__current_bank	D1F7
+		_sys_time	D1F8
+		.sys_time	D1F8
+		.int_0x40	D1FA
+		.int_0x48	D20A
+		.int_0x50	D21A
+		.int_0x58	D22A
+		.int_0x60	D23A
+AREA _HEAP
+	RADIX HEX
+	BASE D24D
+	SIZE 0000
+	ATTRIB REL CON
+	GLOBALS
+		_malloc_heap_start	D24D
+AREA _OVERLAY
+	RADIX HEX
+	BASE D24D
+	SIZE 0000
+	ATTRIB REL CON
+AREA _ISEG
+	RADIX HEX
+	BASE D24D
+	SIZE 0000
+	ATTRIB REL CON
+AREA _BSEG
+	RADIX HEX
+	BASE D24D
+	SIZE 0000
+	ATTRIB REL CON
+AREA _XSEG
+	RADIX HEX
+	BASE D24D
+	SIZE 0000
+	ATTRIB REL CON
+MODULES
+	FILE /opt/gbdk/lib/small/asxxxx/gb/crt0.o
+		NAME Runtime
+	FILE /var/folders/04/mjm41rvn4_n6v5xtcnrmv56h0kk6hh/T/lcc278532.o
+		NAME lcc278530
+LIBRARIES
+	LIBRARY /opt/gbdk/lib/small/asxxxx/gbz80/gbz80.lib
+		MODULE crt0_rle.o
+	LIBRARY /opt/gbdk/lib/small/asxxxx/gb/gb.lib
+		MODULE set_prop.o
+	LIBRARY /opt/gbdk/lib/small/asxxxx/gbz80/gbz80.lib
+		MODULE shift.o
+	LIBRARY /opt/gbdk/lib/small/asxxxx/gb/gb.lib
+		MODULE mv_spr.o
+	LIBRARY /opt/gbdk/lib/small/asxxxx/gb/gb.lib
+		MODULE cgb.o
+	LIBRARY /opt/gbdk/lib/small/asxxxx/gb/gb.lib
+		MODULE set_data.o
+	LIBRARY /opt/gbdk/lib/small/asxxxx/gb/gb.lib
+		MODULE pad.o
+	LIBRARY /opt/gbdk/lib/small/asxxxx/gb/gb.lib
+		MODULE set_spr.o
+	LIBRARY /opt/gbdk/lib/small/asxxxx/gbz80/gbz80.lib
+		MODULE stubs.o
+	LIBRARY /opt/gbdk/lib/small/asxxxx/gbz80/gbz80.lib
+		MODULE _mullong.o
+	LIBRARY /opt/gbdk/lib/small/asxxxx/gb/gb.lib
+		MODULE cpy_data.o
+	LIBRARY /opt/gbdk/lib/small/asxxxx/gb/gb.lib
+		MODULE set_bk_t.o
+	LIBRARY /opt/gbdk/lib/small/asxxxx/gbz80/gbz80.lib
+		MODULE div.o
+	LIBRARY /opt/gbdk/lib/small/asxxxx/gbz80/gbz80.lib
+		MODULE mul.o
+	LIBRARY /opt/gbdk/lib/small/asxxxx/gbz80/gbz80.lib
+		MODULE _modslong.o
+	LIBRARY /opt/gbdk/lib/small/asxxxx/gbz80/gbz80.lib
+		MODULE _modulong.o
+	LIBRARY /opt/gbdk/lib/small/asxxxx/gbz80/gbz80.lib
+		MODULE _divslong.o
+	LIBRARY /opt/gbdk/lib/small/asxxxx/gbz80/gbz80.lib
+		MODULE _divulong.o
+	LIBRARY /opt/gbdk/lib/small/asxxxx/gb/gb.lib
+		MODULE set_xy_t.o
+USERBASEDEF
+	_CODE=0x0200
+	_DATA=0xC0A0
+	_CODE_1=0x4000
+USERGLOBALDEF
+	.OAM=0xC000
+	.STACK=0xE000
+	.refresh_OAM=0xFF80
+	.init=0x0000

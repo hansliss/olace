@@ -1,0 +1,22 @@
+In the year 2003, the Omegan system
+developed a method of training its
+warriors to protect their star
+colonies. Over the city of Komar,
+android controlled fighters raced
+to engage and destroy these
+Omegan warriors.
+
+Points were awarded for the ability to
+neutralize this droid force as follows.
+
+<single crystal>	 350
+<double crystal>	 500
+<drone>			1000
+<offensive>		1500
+<rotor>			2500
+
+
+The omegan method is so successful it
+commands fear and respect from all
+throughout the Galaxies. The
+method is code named...
