@@ -830,7 +830,7 @@ void main()
 	  }
 	  if (abs_l(ship.speed_y) > MAXMARCH) {
 	    ship.speed_y -= sign_l(ship.speed_y);
-	  }
+	    }
 	  }
       if(i & J_LEFT)
 	{
@@ -863,13 +863,11 @@ void main()
 
       set_sprite_tile(0, 23 + sdir);
 
-      if (ship.speed_x < -MAXSPEED)
-	ship.speed_x=-MAXSPEED;
-      if (ship.speed_x > MAXSPEED)
-	ship.speed_x=MAXSPEED;
-      if (ship.speed_y < -MAXSPEED)
-	ship.speed_y=-MAXSPEED;
-      if (ship.speed_y > MAXSPEED)
-	ship.speed_y=MAXSPEED;
+      if (abs_l(ship.speed_x) > MAXSPEED) {
+	ship.speed_x = ((ship.speed_x>0)?MAXSPEED:(0-MAXSPEED));
+      }
+      if (abs_l(ship.speed_y) > MAXSPEED) {
+	ship.speed_y = ((ship.speed_y>0)?MAXSPEED:(0-MAXSPEED));
+      }
     }
 }
