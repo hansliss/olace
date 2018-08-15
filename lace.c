@@ -496,8 +496,8 @@ void fade()
 #define SPRITEHEIGHT (8L)
 #define SWIDTH (160L)
 #define SHEIGHT (144L)
-#define MAXMARCH 150
-#define MAXSPEED 210
+#define MAXMARCH 150L
+#define MAXSPEED 210L
 
 
 /* Scroll the background, the window and the sprite */
@@ -703,7 +703,7 @@ long rockx[]={0,   5,   8,  11, 12, 11, 8, 5,  0,  -5, -8, -11, -12, -11, -8, -5
 long rocky[]={-12, -11, -8, -5, 0,  5,  8, 11, 12, 11, 8,  5,   0,   -5,  -8, -11, -12};
 
 #define sign_l(x) (((x) > 0)?1:0 - ((x) < 0)?1:0)
-#define abs_l(x) (((x) > 0)?(x):(-x))
+#define abs_l(x) (((x) > 0)?(x):(0 -(x)))
 
 void main()
 {
@@ -864,10 +864,18 @@ void main()
       set_sprite_tile(0, 23 + sdir);
 
       if (abs_l(ship.speed_x) > MAXSPEED) {
-	ship.speed_x = ((ship.speed_x>0)?MAXSPEED:(0-MAXSPEED));
+	if (ship.speed_x>0) {
+	  ship.speed_x = MAXSPEED;
+	} else {
+	  ship.speed_x = 0-MAXSPEED;
+	}
       }
       if (abs_l(ship.speed_y) > MAXSPEED) {
-	ship.speed_y = ((ship.speed_y>0)?MAXSPEED:(0-MAXSPEED));
+	if (ship.speed_y>0) {
+	  ship.speed_y = MAXSPEED;
+	} else {
+	  ship.speed_y = 0-MAXSPEED;
+	}
       }
     }
 }
